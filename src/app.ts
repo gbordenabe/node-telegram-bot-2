@@ -12,6 +12,8 @@ const port = process.env.PORT || 3000;
  */
 /* function main() { */
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => res.send('Express on Vercel'));
 
 app.listen(port, () => {
