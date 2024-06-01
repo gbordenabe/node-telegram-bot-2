@@ -1,5 +1,19 @@
 import dotenv from 'dotenv';
-import { botService } from './services/bot';
 dotenv.config();
+import { botService } from './services/bot';
+import express from 'express';
 
-botService();
+const app = express();
+const port = process.env.PORT || 3000;
+
+(async () => {
+  main();
+})();
+
+function main() {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+
+  botService();
+}
